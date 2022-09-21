@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    font-family: "Libre Baskerville";
+}
+
+h3 {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sheet-wrapper {
+    background-color: white;
+    padding: 8px;
+}
+.sheet-character-description, .sheet-character-attributes, .sheet-armor-stability {
+    display: flex;
+    justify-content: space-around;
+}
+
+div > input.sheet-cash-input#sheet-cashInput {
+    width: 80px;
+}
+
+.sheet-armor-stability > div {
+    width: 40%;
+}
+
+.sheet-character-status {
+    display: flex;
+    justify-content: center;
+}
+
+.sheet-character-status > div:nth-child(1),
+.sheet-character-status > div:nth-child(1) > * {
+    text-align: right;
+}
+
+.sheet-character-status > div > label {
+    margin: 0 0;
+}
+
+.sheet-hp-input {
+    width: 40px;
+}
+
+.sheet-hp-divider {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.sheet-hp-divider > p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.sheet-deprivation-status {
+    justify-content: left;
+}
+
+.sheet-wrapper label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.sheet-character-attributes input {
+    width: 40px;
+}
+
+.sheet-character-attributes label {
+    margin: 0 0;
+}
+
+.sheet-equipment-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sheet-equipment-slot {
+    width: 45%;
+}
+
+.sheet-equipment-slot > textarea {
+    height: 70px;
+}
