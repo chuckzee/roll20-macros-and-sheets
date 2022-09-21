@@ -1,0 +1,149 @@
+<div class="wrapper">
+    <h3>Character Details</h3>
+    <div class="character-description">
+        <div>
+            <input type="text" id="characterNameInput" name="attr_character_name">
+            <label for="attr_character_name">Character Name</label><br>
+        </div>
+        <div>
+            <input type="number" id="playerNameInput" name="attr_age">
+            <label for="attr_age">Age (Roll 2d10+20)</label><br>
+        </div>
+        <div>
+            <input type="number" class="cash-input" id="cashInput" name="attr_cash">
+            <label for="attr_cash">Cash</label><br>
+        </div>
+    </div>
+    <hr/>
+    <h3>Status</h3>
+    <div class="character-status">
+        <div>
+            <input type="number" class="hp-input" id="hitProtectionCurrent" name="attr_hit_protection">
+            <label for="attr_hit_protection">Current Hit Protection</label>
+        </div>
+        <div class="hp-divider">
+            <p>/</p>
+        </div>
+        <div>
+            <input type="number" class="hp-input" id="hitProtectionMax" name="attr_hit_protection_max">
+            <label for="attr_hit_protection_max">Max Hit Protection</label>
+            <p><em>Roll 1d6 to determine.</em></p>
+        </div>
+    </div>
+    <div class="deprivation-status">
+        <div>
+            <input type="checkbox" id="deprivedInput" name="attr_deprived">
+            <label for="attr_deprived">Deprived?</label>
+            <p><em>You are deprived if you lack a critical need (food, rest, adequate shelter) and this prevents HP recovery.<br/>
+            Being deprived for 24 hours adds a Fatigue condition, which takes up an inventory slot.</em></p>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <div class="armor-stability">
+        <div>
+            <input type="input" id="deprivedInput" name="attr_armor">
+            <label for="attr_armor">Armor</label>
+            <p><em>Armor reduces the damage you take from an attack. You can receive armor from various objects.</em></p>
+        </div>
+        <div>
+            <input type="input" id="deprivedInput" name="attr_stability">
+            <label for="attr_stability">Stability</label>
+            <p><em>Stability reduces the stress you take. You can receive stability from various objects.</em></p>
+        </div>
+    </div>
+    <hr/>
+    <h3>Character Attributes</h3>
+    <p><em>Roll 3d6 for your ability scores. Any two of these results may be swapped once.</em></p>
+    <div class="character-attributes">
+        <div>
+            <input type="number" id="strengthValue" name="attr_strength">
+            <label for="attr_strength"><strong>Strength (STR):</strong><br>Physicality, brawn, toughness.</label><br>
+            <button type='roll' name='roll_strength' value='&{template:default} {{name=@{character_name} rolls Strength}} {{result=[[1d20cs1cf20<@{strength}]]}}'>STR</button>
+        </div>
+        <div>
+            <input type="number" id="dexterityValue" name="attr_dexterity">
+            <label for="attr_dexterity"><strong>Dexterity (DEX):</strong><br>Speed, sneaking, precision.</label><br>
+            <button type='roll' name='roll_dexterity' value='&{template:default} {{name=@{character_name} rolls Dexterity}} {{result=[[1d20cs1cf20<@{dexterity}]]}}'>DEX</button>
+        </div>
+        <div>
+            <input type="number" id="controlValue" name="attr_control">
+            <label for="attr_control"><strong>Control (CTRL):</strong><br>Willpower, charm, weird.</label><br>
+            <button type='roll' name='roll_control' value='&{template:default} {{name=@{character_name} rolls Control}} {{result=[[1d20cs1cf20<@{control}]]}}'>CTRL</button>
+        </div>
+    </div>
+    <div>
+        <br/>
+        <p><em>0 STR means death. 0 DEX means paralysis. 0 CTRL means the character is lost in time, space, or otherwise.</em></p>
+    </div>
+    <hr/>
+    <h3>Background</h3>
+    <br>
+    <div>
+        <label for="attr_operational_experience">Operational Experience</label>
+        <textarea name="attr_operational_experience" id="operationalExperienceInput"></textarea>
+        <p><em>Roll 2d12 to determine your character's operational experience.</em></p>
+    </div>
+    <br>
+    <div>
+        <label for="attr_background">Personnel Background</label>
+        <textarea name="attr_background" id="personnelBackgroundInput"></textarea>
+        <p><em>Who were you before entering the Monolith? Roll a d20.</em></p>
+    </div>
+    <br>
+    <div>
+        <label for="attr_virtues_flaws_misfortunes">Virtues, Flaws, and Misfortunes</label>
+        <textarea name="attr_virtues_flaws_misfortunes" id="virtuesFlawsMisfortunesInput"></textarea>
+        <p><em>Roll a d10 for each and confer with the DIRECTOR.</em></p>
+    </div>
+    <hr/>
+    <h3>Equipment</h3>
+    <p><em>If all equipment slots are in use, Hit Protection is reduced to zero.<br/>
+    Use reason when assigning items to inventory slots. You can't wear two helmets, but you could wear two rings.</em></p>
+    <br>
+    <div class=equipment-slots>
+        <div class="equipment-slot">
+            <label for="attr_equipment_1">Equipment Slot 1 (Head)</label>
+            <textarea rows="4" name="attr_equipment_1" id="equipmentSlot1"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_2">Equipment Slot 2 (Chest)</label>
+            <textarea rows="4" name="attr_equipment_2" id="equipmentSlot2"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_3">Equipment Slot 3 (Hand)</label>
+            <textarea rows="4" name="attr_equipment_3" id="equipmentSlot3"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_4">Equipment Slot 4 (Hand)</label>
+            <textarea rows="4" name="attr_equipment_4" id="equipmentSlot4"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_5">Equipment Slot 5</label>
+            <textarea rows="4" name="attr_equipment_5" id="equipmentSlot5"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_6">Equipment Slot 6</label>
+            <textarea rows="4" name="attr_equipment_6" id="equipmentSlot6"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_7">Equipment Slot 7</label>
+            <textarea rows="4" name="attr_equipment_7" id="equipmentSlot7"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_8">Equipment Slot 8</label>
+            <textarea rows="4" name="attr_equipment_8" id="equipmentSlot8"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_9">Equipment Slot 9</label>
+            <textarea rows="4" name="attr_equipment_9" id="equipmentSlot9"></textarea>
+        </div>
+        <div class="equipment-slot">
+            <label for="attr_equipment_10">Equipment Slot 10</label>
+            <textarea rows="4" name="attr_equipment_10" id="equipmentSlot10"></textarea>
+        </div>
+    </div>
+</div>
+<script type="text/worker">
+
+</script>
